@@ -1,5 +1,6 @@
 package com.nerdherd687.lib.drivers;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.StatusFrame;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.TalonSRXConfiguration;
@@ -24,6 +25,7 @@ public class NerdyTalon extends TalonSRX {
 		super.configPeakOutputReverse(-1, 0);
 		super.configClosedloopRamp(0, 0);
 		super.configOpenloopRamp(0, 0);	
+		super.setNeutralMode(NeutralMode.Brake);
 	}
 	
 	public void configPIDF(double p, double i, double d, double f, int slot) {

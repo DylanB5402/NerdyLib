@@ -1,6 +1,7 @@
 package com.nerdherd687.robot;
 
 import com.nerdherd687.lib.AbstractOI;
+import com.nerdherd687.lib.motor.commands.SetMotorPower;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -18,7 +19,7 @@ public class OI extends AbstractOI{
 	public Joystick operatorJoy = new Joystick(2);
 
 	public OI() {
-
+		SmartDashboard.putData("Run intake 6V", new SetMotorPower(Robot.intake, 0.5));
 		
 		
 
