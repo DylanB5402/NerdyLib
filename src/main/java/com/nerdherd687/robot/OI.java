@@ -2,6 +2,7 @@ package com.nerdherd687.robot;
 
 import com.nerdherd687.lib.AbstractOI;
 import com.nerdherd687.lib.motor.commands.SetMotorPower;
+import com.nerdherd687.lib.pneumatics.commands.ExtendPiston;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -20,7 +21,7 @@ public class OI extends AbstractOI{
 
 	public OI() {
 		SmartDashboard.putData("Run intake 6V", new SetMotorPower(Robot.intake, 0.5));
-		
+		SmartDashboard.putData("Open Claw", new ExtendPiston(Robot.claw));
 		
 
 	}

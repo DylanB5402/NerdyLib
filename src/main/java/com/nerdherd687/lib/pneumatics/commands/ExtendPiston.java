@@ -5,16 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package com.nerdherd687.lib.commands.piston;
+package com.nerdherd687.lib.pneumatics.commands;
 
-import com.nerdherd687.lib.subsystems.Piston;
+import com.nerdherd687.lib.pneumatics.Piston;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class RetractPiston extends Command {
-  
+public class ExtendPiston extends Command {
+
   private Piston m_piston;
-  public RetractPiston(Piston piston) {
+  
+  public ExtendPiston(Piston piston) {
     m_piston = piston;
     requires(m_piston);
   }
@@ -22,7 +23,7 @@ public class RetractPiston extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    m_piston.setReverse();
+    m_piston.setForwards();
   }
 
   // Called repeatedly when this Command is scheduled to run

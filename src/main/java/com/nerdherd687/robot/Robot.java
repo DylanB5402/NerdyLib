@@ -9,6 +9,7 @@ package com.nerdherd687.robot;
 
 import com.nerdherd687.lib.misc.AutoChooser;
 import com.nerdherd687.lib.motor.SingleMotorTalonSRX;
+import com.nerdherd687.lib.pneumatics.Piston;
 import com.nerdherd687.robot.subsystems.Drive;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -23,6 +24,7 @@ public class Robot extends TimedRobot {
 
 	public static Drive drive;
 	public static SingleMotorTalonSRX intake;
+	public static Piston claw;
 	public static AutoChooser autoChooser;
 	public static OI oi;
 
@@ -35,6 +37,7 @@ public class Robot extends TimedRobot {
 		intake.setSensorPhase(true);
 		intake.configPIDF(0, 0, 0, 0);
 		intake.configCurrentLimit(20, 20);
+		claw = new Piston(0, 1);
 	    oi = new OI();
 	}
 
