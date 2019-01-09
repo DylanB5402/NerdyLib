@@ -2,7 +2,6 @@ plugins {
     id "java"
     id "edu.wpi.first.GradleRIO" version "2019.1.1"
      id 'maven'
-    id 'maven-publish'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
@@ -80,15 +79,4 @@ dependencies {
 jar {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     manifest edu.wpi.first.gradlerio.GradleRIOPlugin.javaManifest(ROBOT_MAIN_CLASS)
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = "com.nerdherd687"
-            artifactId = "NerdyLib"
-            version = "2019.1.1"
-            from components.java
-        }
-    }
 }
