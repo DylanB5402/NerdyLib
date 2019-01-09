@@ -61,6 +61,9 @@ def includeDesktopSupport = true
 // Maven central needed for JUnit
 repositories {
     mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
 }
 
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
