@@ -2,7 +2,11 @@ plugins {
     id "java"
     id "edu.wpi.first.GradleRIO" version "2019.1.1"
      id 'maven'
+<<<<<<< HEAD
     // id 'maven-publish'
+=======
+    id 'maven-publish'
+>>>>>>> master
 }
 
 group 'com.nerdherd687.lib'
